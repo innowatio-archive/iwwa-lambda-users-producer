@@ -1,0 +1,50 @@
+{
+  "name": "lambda-user-producer",
+  "version": "1.0.0",
+  "description": "User authentication",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/innowatio/lambda-user-producer.git"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.2.5",
+    "bcrypt": "^0.8.5",
+    "bluebird": "^2.10.1",
+    "dotenv": "^1.2.0",
+    "lambda-rpc": "^1.1.0",
+    "mongodb": "^2.0.45",
+    "node-uuid": "^1.4.3",
+    "ramda": "^0.17.1",
+    "tcomb": "^2.5.0",
+    "tcomb-validation": "^2.2.0",
+    "validator": "^4.0.6"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-core": "^5.8.25",
+    "babel-plugin-rewire": "^0.1.22",
+    "chai": "^3.3.0",
+    "chai-as-promised": "^5.1.0",
+    "coveralls": "^2.11.4",
+    "eslint": "^1.5.1",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-eslint": "^1.0.0",
+    "gulp-spawn-mocha": "^2.2.1",
+    "istanbul": "^0.3.21",
+    "mocha": "^2.3.3",
+    "sinon": "^1.17.0",
+    "sinon-chai": "^2.8.0"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "dev": "gulp",
+    "lint": "gulp lint",
+    "prepublish": "gulp build",
+    "test": "gulp test"
+  },
+  "author": "Team Wattellina <wattellina@mondora.com>",
+  "license": "Apache-2.0"
+}
