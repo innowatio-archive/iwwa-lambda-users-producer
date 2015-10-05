@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import {partial} from "ramda";
 
 import {validateParams, ensureEmailUniqueness, putNewUserInKinesis} from "./methods/create-user";
-import {searchToken, mailVerification} from "./methods/verify-email";
+import {searchToken, emailVerification} from "./methods/verify-email";
 import {searchUser, creationLoginToken} from "./methods/login";
 
 dotenv.load();
@@ -20,7 +20,7 @@ lambdaRpc.methods({
     verifyEmail: function (token) {
         return BPromise.resolve()
             .then(partial(searchToken, token))
-            .then(partial(mailVerification, token));
+            .then(partial(emailVerification, token));
     },
     login: function (address, password) {
         return BPromise.resolve()

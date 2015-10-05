@@ -10,7 +10,7 @@ export function searchToken (token) {
         url: process.env.MONGODB_URL,
         collectionName: "users",
         query: {
-            "services.email.token": token
+            "services.email.verificationTokens.token": token
         }
     });
 }

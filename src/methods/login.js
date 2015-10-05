@@ -13,7 +13,7 @@ export function searchUser (address) {
         url: process.env.MONGODB_URL,
         collectionName: "users",
         query: {
-            "services.email.address": address
+            "emails.address": address
         }
     });
 }
