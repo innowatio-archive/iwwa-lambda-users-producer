@@ -66,7 +66,7 @@ describe("`emailVerification`", function () {
     var date = 1443694430074;
 
     var kinesis = {
-        putRecord: sinon.spy()
+        putRecord: sinon.stub().returns(BPromise.resolve({}))
     };
 
     var generateUuid = sinon.stub().returns(id);

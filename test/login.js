@@ -61,7 +61,7 @@ describe("`creationLoginToken`", function () {
     var token = "6790ac7c-24ac-4f98-8464-42f6d98a53ae";
 
     var kinesis = {
-        putRecord: sinon.spy()
+        putRecord: sinon.stub().returns(BPromise.resolve({}))
     };
 
     var hashedToken = sinon.stub().returns(token);

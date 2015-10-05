@@ -68,7 +68,7 @@ describe("`putNewUserInKinesis`", function () {
     var hash = "$2a$12$JbHoP.KA/Fw1sJOlHVQSq.Rc8i5E/O9JOFfZ6gxvyzNCQO8y79iUy";
 
     var kinesis = {
-        putRecord: sinon.spy()
+        putRecord: sinon.stub().returns(BPromise.resolve({}))
     };
 
     var generateUuid = sinon.stub().returns(id);
