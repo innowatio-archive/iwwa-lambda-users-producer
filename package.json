@@ -12,7 +12,7 @@
     "bcryptjs": "^2.3.0",
     "bluebird": "^2.10.1",
     "dotenv": "^1.2.0",
-    "lambda-rpc": "^1.1.0",
+    "lambda-rpc": "^1.2.0",
     "mongodb": "^2.0.45",
     "node-uuid": "^1.4.3",
     "ramda": "^0.17.1",
