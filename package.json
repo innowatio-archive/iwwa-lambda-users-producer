@@ -41,9 +41,9 @@
   "scripts": {
     "build": "gulp build",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "deploy": "gulp deploy",
     "dev": "gulp",
     "lint": "gulp lint",
-    "prepublish": "gulp build",
     "test": "gulp test"
   },
   "author": "Team Wattellina <wattellina@mondora.com>",
