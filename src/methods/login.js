@@ -7,7 +7,6 @@ import generateUuid from "../lib/generate-uuid";
 import {compare} from "../lib/bcrypt";
 import {hashedToken} from "../lib/hashed-token";
 
-
 export function searchUser (address) {
     return mongodb.findOne({
         url: process.env.MONGODB_URL,
@@ -19,11 +18,11 @@ export function searchUser (address) {
 }
 
 export function creationLoginToken (password, user) {
-    if (
-        !user ||
-        !compare(password, user.services.password.bcrypt)
-    ) {
-        throw new RpcError(401, "Login failed");
+    if (!user) {
+        throw new RpcError(401, "Login failed: user not found");
+    }
+    if (!compare(password, user.services.password.bcrypt)) {
+        throw new RpcError(401, "Login failed: wrong password");
     }
     var loginToken = generateUuid();
     user.services.resume.loginTokens.push({
@@ -43,7 +42,5 @@ export function creationLoginToken (password, user) {
         PartitionKey: "users",
         StreamName: process.env.KINESIS_STREAM_NAME
     });
-
-
 
 }
