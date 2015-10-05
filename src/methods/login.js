@@ -1,11 +1,11 @@
 import {RpcError} from "lambda-rpc";
 import {omit} from "ramda";
 
-import * as kinesis from "lib/kinesis";
-import * as mongodb from "lib/mongodb";
-import generateUuid from "lib/generate-uuid";
-import {compare} from "lib/bcrypt";
-import {hashedToken} from "lib/hashed-token";
+import * as kinesis from "../lib/kinesis";
+import * as mongodb from "../lib/mongodb";
+import generateUuid from "../lib/generate-uuid";
+import {compare} from "../lib/bcrypt";
+import {hashedToken} from "../lib/hashed-token";
 
 
 export function searchUser (address) {

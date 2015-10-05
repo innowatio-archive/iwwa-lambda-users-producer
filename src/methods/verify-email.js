@@ -1,9 +1,9 @@
 import {RpcError} from "lambda-rpc";
 import {complement, omit, propEq} from "ramda";
 
-import * as kinesis from "lib/kinesis";
-import * as mongodb from "lib/mongodb";
-import generateUuid from "lib/generate-uuid";
+import * as kinesis from "../lib/kinesis";
+import * as mongodb from "../lib/mongodb";
+import generateUuid from "../lib/generate-uuid";
 
 export function searchToken (token) {
     return mongodb.findOne({

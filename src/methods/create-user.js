@@ -1,11 +1,11 @@
 import {validate} from "tcomb-validation";
 import {RpcError} from "lambda-rpc";
 
-import generateUuid from "lib/generate-uuid";
-import * as mongodb from "lib/mongodb";
-import {hash} from "lib/bcrypt";
-import * as kinesis from "lib/kinesis";
-import OptionsType from "lib/options-type";
+import generateUuid from "../lib/generate-uuid";
+import * as mongodb from "../lib/mongodb";
+import {hash} from "../lib/bcrypt";
+import * as kinesis from "../lib/kinesis";
+import OptionsType from "../lib/options-type";
 
 export function validateParams (options) {
     var validation = validate(options, OptionsType);
