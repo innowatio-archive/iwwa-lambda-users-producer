@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.2.5",
-    "bcrypt": "^0.8.5",
+    "bcryptjs": "^2.3.0",
     "bluebird": "^2.10.1",
     "dotenv": "^1.2.0",
     "lambda-rpc": "^1.1.0",
