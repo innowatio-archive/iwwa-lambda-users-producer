@@ -1,5 +1,5 @@
 import {RpcError} from "lambda-rpc";
-import {complement, omit, propEq} from "ramda";
+import {complement, find, omit, pipe, prop, propEq} from "ramda";
 
 import * as kinesis from "../lib/kinesis";
 import * as mongodb from "../lib/mongodb";
@@ -19,7 +19,10 @@ export function emailVerification (token, user) {
     if (!user) {
         throw new RpcError(401, "Unauthorized");
     }
-    var address = user.services.email.verificationTokens.find(propEq("token", token)).address;
+    var address = pipe(
+        find(propEq("token", token)),
+        prop("address")
+    )(user.services.email.verificationTokens);
     // Modify the user object to mark the email address as verified
     user.emails = user.emails.map(email => {
         if (email.address === address) {
