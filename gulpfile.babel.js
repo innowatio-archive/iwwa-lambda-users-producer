@@ -1,18 +1,10 @@
 import gulp from "gulp";
-import {execSync} from "child_process";
-import babel from "gulp-babel";
 import eslint from "gulp-eslint";
 import mocha from "gulp-spawn-mocha";
+import lambdaDeploy from "lambda-deploy";
 
-gulp.task("build", function () {
-    try {
-        execSync("rm -r dist/");
-    } catch (err) {
-        // Ignore
-    }
-    return gulp.src("src/**/*.js")
-        .pipe(babel())
-        .pipe(gulp.dest("dist/"));
+gulp.task("deploy", function () {
+    return lambdaDeploy();
 });
 
 gulp.task("test", function () {

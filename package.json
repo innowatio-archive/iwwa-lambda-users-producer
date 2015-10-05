@@ -1,11 +1,11 @@
 {
-  "name": "lambda-user-producer",
+  "name": "iwwa-lambda-users-producer",
   "version": "1.0.0",
   "description": "User authentication",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/innowatio/lambda-user-producer.git"
+    "url": "https://github.com/innowatio/iwwa-lambda-users-producer.git"
   },
   "dependencies": {
     "aws-sdk": "^2.2.5",
@@ -33,6 +33,7 @@
     "gulp-eslint": "^1.0.0",
     "gulp-spawn-mocha": "^2.2.1",
     "istanbul": "^0.3.21",
+    "lambda-deploy": "^2.1.0",
     "mocha": "^2.3.3",
     "sinon": "^1.17.0",
     "sinon-chai": "^2.8.0"
