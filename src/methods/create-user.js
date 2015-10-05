@@ -63,5 +63,5 @@ export function putNewUserInKinesis (options) {
         }),
         PartitionKey: "users",
         StreamName: process.env.KINESIS_STREAM_NAME
-    });
+    }).return(null);
 }

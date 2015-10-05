@@ -43,5 +43,5 @@ export function emailVerification (token, user) {
         }),
         PartitionKey: "users",
         StreamName: process.env.KINESIS_STREAM_NAME
-    });
+    }).return(null);
 }

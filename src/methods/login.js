@@ -41,6 +41,5 @@ export function creationLoginToken (password, user) {
         }),
         PartitionKey: "users",
         StreamName: process.env.KINESIS_STREAM_NAME
-    });
-
+    }).return(loginToken);
 }
